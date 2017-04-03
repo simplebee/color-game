@@ -23,11 +23,14 @@ function reset() {
   colorSet = getColorSet(gameMode);
   randomNum = getRandom(0, colorSet.length - 1);
   correctColor = colorSet[randomNum];
-  headerRgb.textContent = correctColor;
   headerTitle.removeAttribute('style');
+  headerRgb.textContent = correctColor;
   buttonNew.textContent = 'New colors';
   navMessage.textContent = '';
-  
+  resetSquare();
+}
+
+function resetSquare() {
   for (var i = 0; i < square.length; i++) {
     if (colorSet[i]) {
       square[i].classList.remove('square_hide');
@@ -42,18 +45,22 @@ function setupSquare() {
   for (var i = 0; i < square.length; i++) {
     square[i].addEventListener('click', function() {
       if (this.style.background === correctColor) {
-        for (var i = 0; i < square.length; i++) {
-          square[i].style.background = correctColor;
-        }
-        headerTitle.style.background = correctColor;
-        buttonNew.textContent = 'Play again?';
-        navMessage.textContent = 'Correct!';
+        winGame();
       } else {
         this.removeAttribute('style');
         navMessage.textContent = 'Try again';
       }
     });
   }
+}
+
+function winGame() {
+  for (var i = 0; i < square.length; i++) {
+    square[i].style.background = correctColor;
+  }
+  headerTitle.style.background = correctColor;
+  buttonNew.textContent = 'Play again?';
+  navMessage.textContent = 'Correct!';
 }
 
 function setupButtons() {
