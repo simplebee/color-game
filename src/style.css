@@ -26,7 +26,6 @@ html, body {
 .square {
   width: 30%;
   float: left;
-  background: lightskyblue;
   margin: 1.6%;
   padding-bottom: 30%;
 }

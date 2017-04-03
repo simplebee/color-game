@@ -4,6 +4,8 @@ var gameMode = 6;
 
 var square = document.querySelectorAll('.square');
 var headerRgb = document.querySelector('.header__rgb');
+var headerTitle = document.querySelector('.header__title');
+
 function init() {
   colorSet = getColorSet(gameMode);
 
@@ -14,6 +16,17 @@ function init() {
   for (var i = 0; i < square.length; i++) {
     square[i].style.background = colorSet[i];
     square[i].textContent = colorSet[i]; //testing
+
+    square[i].addEventListener('click', function() {
+      if (this.style.background === correctColor) {
+        for (var i = 0; i < square.length; i++) {
+          square[i].style.background = correctColor;
+        }
+        headerTitle.style.background = correctColor;
+      } else {
+        this.removeAttribute('style');
+      }
+    });
   }
 }
 
