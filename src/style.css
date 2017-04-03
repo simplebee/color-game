@@ -29,3 +29,7 @@ html, body {
   margin: 1.6%;
   padding-bottom: 30%;
 }
+
+.square_hide {
+  display: none;
+}
