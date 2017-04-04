@@ -1,24 +1,16 @@
-html, body, h1 {
+html,
+body,
+h1 {
   margin: 0;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
   background: #1D3557;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header {
   background: #E63946;
-}
-
-.nav {
-  background: #F1FAEE;
-}
-
-.button,
-.nav__message {
-  color: #E63946;
 }
 
 .header__title {
@@ -34,14 +26,42 @@ body {
   font-size: 3.5rem;
 }
 
+.nav {
+  background: #F1FAEE;
+  height: 50px;
+  text-align: center;
+}
+
+.nav__message {
+  display: inline-block;
+  color: #E63946;
+  width: 30%;
+}
+
+.button {
+  background: #F1FAEE;
+  color: #E63946;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.nav__message,
+.button {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .square {
-  width: 30%;
   float: left;
+  width: 30%;
   margin: 1.6%;
   padding-bottom: 30%;
 }
