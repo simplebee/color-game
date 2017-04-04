@@ -28,6 +28,7 @@ function reset() {
   buttonNew.textContent = 'New colors';
   navMessage.textContent = '';
   resetSquare();
+  setButtonSelection();
 }
 
 function resetSquare() {
@@ -38,6 +39,16 @@ function resetSquare() {
     } else {
       square[i].classList.add('square_hide');
     }
+  }
+}
+
+function setButtonSelection() {
+  if (gameMode === 6) {
+    buttonHard.classList.add('button_select');
+    buttonEasy.classList.remove('button_select');
+  } else {
+    buttonEasy.classList.add('button_select');
+    buttonHard.classList.remove('button_select');
   }
 }
 
